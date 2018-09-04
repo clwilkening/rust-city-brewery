@@ -17,7 +17,7 @@ const storeSchema = new mongoose.Schema({
 });
 
 // not an arrow => because we need 'this'
-storeSchema.pre('save', function(next) {
+storeSchema.pre('save',  function(next) {
   // this. current instance of store we are saving
   if (!this.isModified('name')) {
     return next(); // skip it
